@@ -1,24 +1,7 @@
 $(document).ready(function() {
 
     var topics = ["Philip J. Fry", "Turanga Leela", "Bender", "Hermes Conrad", "Amy Wong", "Scruffy", "Dr. Zoidberg", "Professor J. Farnsworth", "Zapp Brannigan", "Calculon"]
-    // const theme = new Audio("assets/FuturamaThemeSong.mp3");
-    var musicPlaying = false;
     var results;
-    //var giphyURL = "https://api.giphy.com/v1/gifs/trending?api_key=FksXZxJtNgMhBh9yoAtA6sJfP13eNyd4";
-    
-        // MUSIC FUNCTION 
-    
-        // $("#title-button").on("click", function() {
-        //     if(musicPlaying == false){
-        //         theme.play();
-        //         musicPlaying = true;
-        //        }else {
-        //         theme.pause();
-        //         musicPlaying = false;
-        //     }
-        // });
-    
-        // MAKE BUTTONS	AND ADD ONCLICK FUNCTION
     
         function makeButtons() {
     
@@ -51,8 +34,6 @@ $(document).ready(function() {
         });
     
         makeButtons();
-    
-        //FUNCTION FOR GRABBING GIPHY API CONTENT
     
           function dataPull() {
     
@@ -90,21 +71,21 @@ $(document).ready(function() {
     
               $("#gifs").prepend(characterDiv);
     
-            }; //ENDS FOR LOOP
-          }); // ENDS AJAX FUNCTION
+            }; 
+          }); 
       
         };
     
-      // Use document on click function to apply function for elements AFTER the page has loaded
+      
     
         $(document).on("click", ".character-btn", dataPull);
     
-        // ANIMATE GIFS
+        
     
         function gifAnimation() {
           var state = $(this).attr("data-state");
-          var position = $(this).attr("data-position"); //will return a string
-          position = parseInt(position); //string to integer
+          var position = $(this).attr("data-position"); 
+          position = parseInt(position); 
     
           console.log(results[position].images.fixed_height.url);
           console.log(position);
